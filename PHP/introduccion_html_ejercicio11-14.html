@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <h1>Formulario de registro</h1>
+    </head>
+    <body>
+        <table>
+            
+        <form method="post" action="Ejercicio14PHP.php">
+            <tr>
+                <td>Nombre: <input name="Nombre" size="15" maxlength="20"/></td>
+            </tr>
+            <tr>
+                <td>Apellido:<input name="Apellido" size="15" maxlength="20"/></td>
+            </tr>
+            <tr>
+                <td>Sexo:<input name="Sexo" type="radio" value="M"/>Masculino <input name="Sexo" type="radio" value="F"/>Femenino<input name="Sexo" type="radio" value="No Binario"/>No Binario</td>    
+            </tr>
+            <tr>
+                <td>Estado Civil <select name="ecivil" id="ecivil">
+                <option value="S">Soltero</option>
+                <option value="C">Casado</option>
+                <option value="D">Divorciado</option>
+                </select></td>
+            </tr>
+            <tr>
+            <td><input name="Aceptoinfo" type="checkbox" checked/>Deseo recibir información sobre
+                novedades y ofertas</td>
+            </tr>
+            <tr>
+                <td><input name="Aceptonormas" type="checkbox"/>Declaro haber leido y aceptar las
+                    condiciones generales del programa y la normativa sobre protección de
+                    datos</td>
+            </tr>
+            <tr>
+                <td><input name="Envio" type="submit" Enviar/></td>
+            </tr>
+        </form>
+        </table>
+    </body>
+</html>

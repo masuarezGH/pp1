@@ -6,6 +6,7 @@
     <body>
 
         <?php
+        try(
         echo " Nombre: " . $_POST["Nombre"] . "<br>";
         echo " Apellido: " . $_POST["Apellido"]. "<br>";
         echo " Sexo: ". $_POST["Sexo"]. "<br>";
@@ -21,6 +22,8 @@
         } else {
             echo "<p>No acepto las normas y condiciones</p>";
         }
+        )
+
         ?>
         </body>
 
