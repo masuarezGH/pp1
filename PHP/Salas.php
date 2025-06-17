@@ -18,7 +18,7 @@
                 }
 
                 public function ocuparButacas($cant){
-                    if(($this->butacasOcupadas+$cant)<$this->cantidadButacas){
+                    if(($this->butacasOcupadas+$cant)<=$this->cantidadButacas){
                         $this->butacasOcupadas = $this->butacasOcupadas + $cant; 
                       
                     }else{
