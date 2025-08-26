@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig'%}
 
 {% block title %}Lista de productos{% endblock %}
 
@@ -6,11 +6,27 @@
     <header class="header">
         <strong>Carrito de Compras</strong>
         <div style="float: right;">
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <p>Email: {{ app.user.email }}</p>
+    {% endif %}
             <button class="btn-ligth">Ver Orden</button>
             <button class="btn-ligth">Salir</button>
         </div>
     </header>
     <main>
         <h2 class="title">Lista de productos</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    {% for producto in productos %}
+        <div style="border: 1px solid #ccc; padding: 10px; width: 200px; text-align: center;">
+            <img src="{{ asset(producto.imagen) }}" alt="{{ producto.nombre }}" style="max-width: 100%; height: auto;">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.descripcion }}</p>
+            <p><strong>${{ producto.precio }}</strong></p>
+            <p><button style="border:1px soliz black;">Ver Detalles</button></p>
+        </div>
+    {% else %}
+        <p>No hay productos disponibles.</p>
+    {% endfor %}
+</div>
     </main>
 {% endblock %}
