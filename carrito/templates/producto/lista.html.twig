@@ -2,17 +2,11 @@
 
 {% block title %}Lista de productos{% endblock %}
 
+
+
 {% block body %}
-    <header class="header">
-        <strong>Carrito de Compras</strong>
-        <div style="float: right;">
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <p>Email: {{ app.user.email }}</p>
-    {% endif %}
-            <button class="btn-ligth">Ver Orden</button>
-            <button class="btn-ligth">Salir</button>
-        </div>
-    </header>
+      {% include 'header.html.twig' %}
+  
     <main>
         <h2 class="title">Lista de productos</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 20px;">
@@ -22,7 +16,11 @@
             <h3>{{ producto.nombre }}</h3>
             <p>{{ producto.descripcion }}</p>
             <p><strong>${{ producto.precio }}</strong></p>
-            <p><button style="border:1px soliz black;">Ver Detalles</button></p>
+            <a href="{{ path('detalle_producto', { id: producto.id }) }}" 
+           style="display:inline-block; padding: 6px 12px; background-color: black; color: white; 
+                  text-decoration: none; border-radius: 5px;">
+            Ver detalles
+        </a>
         </div>
     {% else %}
         <p>No hay productos disponibles.</p>
