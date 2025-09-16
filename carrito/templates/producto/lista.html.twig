@@ -3,11 +3,15 @@
 {% block title %}Lista de productos{% endblock %}
 
 
-
 {% block body %}
-      {% include 'header.html.twig' %}
-  
+    {% include 'header.html.twig' %}
     <main>
+    {% for message in app.flashes('success') %}
+    <div style="background:#d4edda; color:#155724; padding:10px; border-radius:5px; margin-bottom:15px;">
+        {{ message }}
+    </div>
+{% endfor %}
+
         <h2 class="title">Lista de productos</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 20px;">
     {% for producto in productos %}
